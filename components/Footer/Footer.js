@@ -20,6 +20,9 @@ import { usePathname } from "next/navigation";
 import { icons } from "@/_lib/icons";
 
 const Footer = () => {
+
+
+
   const [open, setOpen] = useState({
     id: null,
   });
@@ -27,6 +30,8 @@ const Footer = () => {
   const pathname = usePathname();
 
   return (
+
+    // ========= desktop verzija ==========
     <div className="max-md:mt-[3rem] mt-[7.75rem] bg-[#215352]">
       <div className="md:mx-[5rem] max-xl:flex-col py-[1.4rem] flex items-center justify-between border-l-0 border-t-0 border-r-0 border-b-[1px] border-b-white">
         <div
@@ -93,27 +98,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        {/* <div className="flex max-xl:mt-10 items-center gap-[1.938rem] text-white text-end max-md:text-center">
-          <div className="ml-auto">
-            <p className="font-normal max-md:text-[16px] text-[18px]">Podelite svoje jedinstveno online iskustvo sa našim timom</p>
-            <p className="font-normal max-md:text-[16px] text-[18px] -mt-1">i pomozite nam da postanemo bolji. <Link href="/anketa" className="underline max-md:text-[16px] text-[18px] font-semibold max-md:block">Ostavite Vaše mišljenje</Link>.</p>
-          </div>
-        </div> */}
       </div>
-      <div className="flex justify-center mt-5">
-        <Link href={`/`}>
-          <Image
-            src={"/logo1.png"}
-            width={200}
-            height={45}
-            alt="Tied up"
-            className={`invert`}
-          />
-        </Link>
-      </div>
-      <div className="grid grid-cols-8 md:mx-[5rem] border-b-2 border-b-[#b89980] pb-[1.4rem]">
-        <div className="max-md:hidden col-span-2 text-white flex flex-col md:items-center">
-          <div>
+      {/* =============== O NAMA ============== */}
+      <div className="grid grid-cols-1 md:grid-cols-8 md:mx-[5rem] border-b-2 border-b-[#b89980] pb-[1.4rem]">
+      <div className="max-md:hidden col-span-1 text-white flex flex-col md:items-start justify-center">
+          <div className="col-span-2 text-white flex flex-col">
             <h3 className="text-[1rem] font-semibold">O nama</h3>
             <div className="flex flex-col items-start text-[17px] font-extralight mt-4">
               <p>
@@ -155,41 +144,115 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="max-md:col-span-8 col-span-4 flex flex-col justify-center items-center md:pt-[1.6rem]">
-          <div className="flex max-md:mt-4 max-xl:mt-10 items-center gap-[1.938rem]">
-            <a href="https://www.instagram.com/masnetiedup/" target={"_blank"}>
-              <Image
-                src={Instagram}
-                width={22}
-                height={22}
-                alt="Instagram"
-                className="hover:scale-110 transition-all duration-300 invert"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/83116653/admin/feed/posts/"
-              target={"_blank"}
-            >
-              {" "}
-              <Image
-                src="/linkedin2.png"
-                width={25}
-                height={30}
-                alt="youtube"
-                className="hover:scale-110 transition-all duration-300 invert"
-              />
-            </a>
-            <a href="https://www.facebook.com/masnetiedup/" target={"_blank"}>
-              <Image
-                src={Facebook}
-                width={22}
-                height={22}
-                alt="Facebook"
-                className="hover:scale-110 transition-all duration-300 invert"
-              />
-            </a>
+        {/* ======================================================== */}
+
+
+        {/* ======= Izdvajamo ======= */}
+
+        <div className="max-md:hidden col-span-1 text-white flex flex-col justify-center">
+          <div>
+            <h3 className="text-[1rem] font-semibold">Izdvajamo</h3>
+            <div className="flex flex-col items-start text-[17px] font-extralight mt-4">
+              <p>
+                <Link
+                  href={`/kategorija-proizvoda/muskarci/kravate`}
+                  className={`cursor-pointer hover:text-[#b89980] mr-1 ${
+                    pathname === "/kategorija-proizvoda/muskarci/kravate" && "text-[#b89980]"
+                  }`}
+                >
+                  Kravate
+                </Link>
+              </p>
+              <p>
+                <Link
+                  href={`/kategorija-proizvoda/muskarci/leptir-masne`}
+                  className={`cursor-pointer hover:text-[#b89980] mr-1 ${
+                    pathname === "/kategorija-proizvoda/muskarci/leptir-masne" && "text-[#b89980]"
+                  }`}
+                >
+                  Leptir mašne
+                </Link>
+              </p>
+              <p>
+                <Link
+                  href={`/kategorija-proizvoda/muskarci/ascot-kravate`}
+                  className={`cursor-pointer hover:text-[#b89980]  ${
+                    pathname === "/kategorija-proizvoda/muskarci/ascot-kravate" && "text-[#b89980]"
+                  }`}
+                >
+                  Ascot kravate
+                </Link>
+              </p>
+              <p>
+                <Link
+                  href={`/kategorija-proizvoda/muskarci/snala-za-kravatu`}
+                  className={`cursor-pointer hover:text-[#b89980]  ${
+                    pathname === "/kategorija-proizvoda/muskarci/snala-za-kravatu" && "text-[#b89980]"
+                  }`}
+                >
+                  Šnala za kravatu
+                </Link>
+              </p>
+              <p>
+                <Link
+                  href={`/kategorija-proizvoda/premium/korporativni-pokloni`}
+                  className={`cursor-pointer hover:text-[#b89980]  ${
+                    pathname === "/kategorija-proizvoda/premium/korporativni-pokloni" && "text-[#b89980]"
+                  }`}
+                >
+                  Korporativni pokloni
+                </Link>
+              </p>
+            </div>
           </div>
-          <div className="flex mt-5 flex-col max-md:mt-10  gap-[1.25rem] items-center max-xl:w-full xl:max-w-[490px] 2xl:max-w-[500px] 3xl:max-w-[680px]">
+        </div>
+        {/* ========================= */}
+
+        {/* ====== pocinje centar footer-a baner, nacini placanja, social networks ======*/}
+    <div className="col-span-4 flex flex-col items-center jusify-center">
+        <Link href={`/`}>
+          <Image
+            src={"/logo1.png"}
+            width={200}
+            height={45}
+            alt="Tied up"
+            className="invert mt-4"
+          />
+        </Link>
+        <div className="flex mt-4 gap-4">
+          <a href="https://www.instagram.com/masnetiedup/" target="_blank">
+            <Image
+              src={Instagram}
+              width={22}
+              height={22}
+              alt="Instagram"
+              className="hover:scale-110 transition-all duration-300 invert"
+            />
+          </a>
+          <a href="https://www.linkedin.com/company/83116653/admin/feed/posts/" target="_blank">
+            <Image
+              src="/linkedin2.png"
+              width={25}
+              height={30}
+              alt="LinkedIn"
+              className="hover:scale-110 transition-all duration-300 invert"
+            />
+          </a>
+          <a href="https://www.facebook.com/masnetiedup/" target="_blank">
+            <Image
+              src={Facebook}
+              width={22}
+              height={22}
+              alt="Facebook"
+              className="hover:scale-110 transition-all duration-300 invert"
+            />
+          </a>
+      </div>
+    
+    {/* === BANK/ VISA/ MASTERCARD === */}
+
+    <div className="flex mt-5 flex-col max-md:mt-10  gap-[1.25rem] items-center max-xl:w-full xl:max-w-[490px] 2xl:max-w-[500px] 3xl:max-w-[680px]">
+
             <div className="flex items-center gap-1 bg-white px-5 py-1">
               <div>
                 <a
@@ -282,16 +345,23 @@ const Footer = () => {
                 />
               </div>
             </div>
-            <p className="text-[12px] px-1 font-normal text-center text-white ">
-            Cene na sajtu su iskazane u dinarima sa uračunatim porezom, a
-            plaćanje se vrši isključivo u dinarima. Isporuka se vrši SAMO na
-            teritoriji Republike Srbije. Nastojimo da budemo što precizniji u opisu proizvoda, prikazu slika i samih cena, ali ne možemo garantovati da su sve informacije
-            kompletne i bez grešaka. Svi artikli prikazani na sajtu su deo naše
-            ponude i ne podrazumeva da su dostupni u svakom trenutku.
-            </p>
-          </div>
-        </div>
-        <div className="max-md:hidden col-span-2 text-white flex flex-col">
+            </div>
+
+    {/* ============================== */}
+    
+    <p className="mt-5 text-[12px] px-2 text-white text-center">
+      Cene na sajtu su iskazane u dinarima sa uračunatim porezom, a plaćanje se
+      vrši isključivo u dinarima. Isporuka se vrši SAMO na teritoriji Republike
+      Srbije. Nastojimo da budemo što precizniji u opisu proizvoda, prikazu slika
+      i samih cena, ali ne možemo garantovati da su sve informacije kompletne i
+      bez grešaka. Svi artikli prikazani na sajtu su deo naše ponude i ne
+      podrazumeva da su dostupni u svakom trenutku.
+    </p>
+  </div>
+        {/* ====== zavrsava se centar footer-a baner, nacini placanja ======*/}
+
+        {/* ====== korisnicka podrska ====== */}
+        <div className="max-md:hidden col-span-2 text-white flex flex-col md:justify-self-end justify-center">
           <div>
             <h3 className="text-[1rem] font-semibold">Korisnička podrška</h3>
             <div className="flex flex-col items-start text-[17px] font-extralight mt-4">
@@ -345,8 +415,80 @@ const Footer = () => {
           </div>
         </div>
       </div>
+{/* ============ desktop ends here ============ */}
+
+
+{/* ============ mobile ============== */}
+
       <div className="md:hidden mx-[5rem] max-md:w-[95%] max-md:mx-auto py-5  mt-[1.75rem] max-xl:flex-col flex items-center justify-between text-[#191919]">
+
         <div className="flex md:hidden items-center max-md:flex-col max-md:items-center max-md:justify-center max-md:gap-5 max-md:w-full md:gap-[100px] 2xl:gap-[150px] 3xl:gap-[220px]">
+
+           {/* ==== izdvajamo mobile ==== */}
+           <div
+            onClick={() => setOpen({ id: open?.id === 3 ? null : 3 })}
+            className="flex flex-col self-start gap-[40px] max-md:self-center text-center"
+          >
+            <div className={`flex items-center gap-3`}>
+              <p className="text-[1.063rem] font-bold text-white">Izdvajamo</p>
+              <span
+                className={`${
+                  open?.id === 3 ? "-rotate-90" : "rotate-90"
+                } text-white transition-all duration-500`}
+              >
+                {icons.chevron_right}
+              </span>
+            </div>
+            {open?.id === 3 && (
+              <div className="flex flex-col items-center justify-center gap-[0.4rem]  font-normal text-[#c9c9c9]">
+                <Link
+                  href={`/kategorija-proizvoda/muskarci/kravate`}
+                  className={`cursor-pointer hover:text-[#b89980] ${
+                    pathname === "/kategorija-proizvoda/muskarci/kravate" && "text-[#b89980]"
+                  }`}
+                >
+                  Kravate
+                </Link>
+              
+                <Link
+                  href={`/kategorija-proizvoda/muskarci/leptir-masne`}
+                  className={`cursor-pointer hover:text-[#b89980] ${
+                    pathname === "/kategorija-proizvoda/muskarci/leptir-masne" && "text-[#b89980]"
+                  }`}
+                >
+                  Leptir mašne
+                </Link>
+                <Link
+                  href={`/kategorija-proizvoda/muskarci/ascot-kravate`}
+                  className={`cursor-pointer hover:text-[#b89980] ${
+                    pathname === "/kategorija-proizvoda/muskarci/ascot-kravate" && "text-[#b89980]"
+                  }`}
+                >
+                  Ascot kravate
+                </Link>
+                <Link
+                  href={`/kategorija-proizvoda/muskarci/snala-za-kravatu`}
+                  className={`cursor-pointer hover:text-[#b89980] ${
+                    pathname === "/kategorija-proizvoda/muskarci/snala-za-kravatu" && "text-[#b89980]"
+                  }`}
+                >
+                  Šnala za kravatu
+                </Link>
+                <Link
+                  href={`/kategorija-proizvoda/premium/korporativni-pokloni`}
+                  className={`cursor-pointer hover:text-[#b89980] ${
+                    pathname === "/kategorija-proizvoda/premium/korporativni-pokloni" && "text-[#b89980]"
+                  }`}
+                >
+                  Korporativni pokloni
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* =========================== */}
+
+          {/* ====== korisnicka podrska ====== */}
           <div
             onClick={() => setOpen({ id: open?.id === 1 ? null : 1 })}
             className="flex flex-col self-start gap-[40px] max-md:self-center"
@@ -426,6 +568,9 @@ const Footer = () => {
               </div>
             )}
           </div>
+          {/* =================== */}
+
+          {/* ==== O nama ==== */}
           <div
             onClick={() => setOpen({ id: open?.id === 2 ? null : 2 })}
             className="flex flex-col self-start gap-[40px] max-md:self-center text-center"
@@ -477,6 +622,9 @@ const Footer = () => {
               </div>
             )}
           </div>
+          
+          {/* =================== */}
+         
         </div>
       </div>
       <div className="mx-[5rem] max-md:flex-col max-md:gap-10 max-md:w-[95%] max-md:mx-auto py-[1rem] flex items-center justify-between text-white">
